@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import {SectionTitle} from "../../componets/SectionTitle";
 import {Icon} from "../../componets/icon/Icon";
 import {FlexWrapper} from "../../componets/FlexWrapper";
 
