@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import {SectionTitle} from "../../../componets/SectionTitle";
-import {StyledButton} from "../../../componets/Button";
+import {Button} from "../../../componets/Button";
+
 
 export const Contact = () => {
     return (
@@ -11,9 +12,8 @@ export const Contact = () => {
                 <Field placeholder={"name"}/>
                 <Field placeholder={"subject"}/>
                 <Field placeholder={"message"} as={"textarea"}/>
-                <StyledButton type={"submit"}>Send message</StyledButton>
+              <Button type={"submit"} >Send message</Button>
             </StyledForm>
-
         </StyledContact>
     );
 };
