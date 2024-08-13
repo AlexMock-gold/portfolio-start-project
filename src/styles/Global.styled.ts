@@ -21,6 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     a {
         text-decoration: none;
+        eslint-disable-next-line jsx-a11y/anchor-is-validS
     }
     ul{
         list-style: none;
