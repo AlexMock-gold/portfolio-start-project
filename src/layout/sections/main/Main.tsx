@@ -2,26 +2,34 @@ import React from 'react';
 import photo from '../../../assets/img/photo-1.webp'
 import styled from "styled-components";
 import {FlexWrapper} from "../../../componets/FlexWrapper";
+import {Container} from "../../../componets/Container";
+import {theme} from "../../../styles/Theme";
 
 export const Main = () => {
     return (
         <StyledMain>
-            <FlexWrapper align={"center"} justify={"space-around"}>
+            <Container>
+            <FlexWrapper align={"center"} justify={"space-between"}>
                 <div>
-                    <span>Hi There</span>
-                    <Name>I am Svetlana Dyablo</Name>
+                    <SmallText>Hi There</SmallText>
+                    <Name>I am <span>Svetlana Dyablo</span></Name>
                     <MainTitle>A Web Developer.</MainTitle>
                 </div>
-                <StyledImg src={photo} alt=""/>
-            </FlexWrapper>
+                <PhotoWrapper>
+                    <StyledImg src={photo} alt=""/>
+                </PhotoWrapper>
 
+            </FlexWrapper>
+            </Container>
         </StyledMain>
     );
 };
 
-const StyledMain = styled.div`
+const StyledMain = styled.section`
     min-height: 100vh;
     background-color: #c59797;
+    display: flex;
+    
 `
 const StyledImg = styled.img`
     width: 350px;
@@ -29,8 +37,52 @@ const StyledImg = styled.img`
     object-fit: cover;
 `
 const MainTitle = styled.h1`
-
+    font-size: 27px;
+    font-weight: 400;
 `
 const Name = styled.h2`
+    font-weight: 700;
+    font-size: 50px;
+    font-family: "Josefin Sans", sans-serif;
+    letter-spacing: 0.05em;
+    margin: 10px 0;
+  
+    
+    span {   
+        position: relative;
+        z-index: 0;
+        
+        &::before {
+        position: absolute;
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 20px;
+        background-color: ${theme.colors.accent};
+        bottom: 0;
+        z-index: -1;
+    }}
+ 
+`
 
+const SmallText = styled.h2`
+font-weight: 400;
+    font-size: 14px;
+`
+
+const PhotoWrapper = styled.div`
+    position: relative;
+    z-index: 0;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        width: 384px;
+        height: 470px; 
+        border: 5px solid ${theme.colors.accent};
+        
+        top: -24px;
+        left: 24px;
+        z-index: -1;
+    }
 `
