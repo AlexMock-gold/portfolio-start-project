@@ -35,23 +35,24 @@ const StyledMobileMenu = styled.nav`
     display: none;
 
   @media ${theme.media.tablet} {
-    display: block;
+    display: none;
   }
 `;
 
 const BurgerMenu = styled.button<{isOpen: boolean}>`
 position: fixed;
 top: -100px;
-right: -100px;
+right: -50px;
 height: 200px; 
 width: 200px; 
 z-index: 9999999;
+
 
  span {
 display: block;
 height: 2px;
 width: 36px; 
-backgrount-color: ${theme.colors.font};
+background-color: ${theme.colors.font};
 left: 40px;
 bottom: 50px;
 position: absolute;
@@ -116,9 +117,6 @@ ul {
 }
 `;
 
-
-
- 
 
 const Link = styled.a`
   font-family: "Josefin Sans", sans-serif;
